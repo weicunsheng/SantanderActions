@@ -37,7 +37,7 @@ jobs:
       - name: Select Xcode version (14.0)
         run: |
           ls -la /Applications/
-          sudo xcode-select --switch /Applications/Xcode_14.1.0.app
+          sudo xcode-select --switch /Applications/Xcode_15.app
 
       - name: Build IPA
         run: |
