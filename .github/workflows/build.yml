@@ -21,7 +21,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: macos-13
+    runs-on: macos-12
 
     steps:
       - name: Checkout
@@ -36,8 +36,7 @@ jobs:
 
       - name: Select Xcode version (14.0)
         run: |
-          ls -la /Applications/
-          sudo xcode-select --switch /Applications/Xcode_15.app
+          sudo xcode-select --switch /Applications/Xcode_14.0.app
 
       - name: Build IPA
         run: |
@@ -52,19 +51,19 @@ jobs:
           args: "--author Antoine"
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: SantanderJailed
           path: ${{ github.workspace }}/build/SantanderJailed.ipa
 
       - name: Upload IPA for TrollStore
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: SantanderTrollStore
           path: ${{ github.workspace }}/build/SantanderTrollStore.tipa
 
       - name: Upload Permasigned deb
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: SantanderJailbroken
           path: ${{ github.workspace }}/build/Santander.deb
