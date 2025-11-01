@@ -55,16 +55,16 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SantanderJailed
-          path: ${{ github.workspace }}/build/TestingSantanderJailed.ipa
+          path: ${{ github.workspace }}/build/SantanderJailed.ipa
 
       - name: Upload IPA for TrollStore
         uses: actions/upload-artifact@v4
         with:
           name: SantanderTrollStore
-          path: ${{ github.workspace }}/build/TestingSantanderTrollStore.tipa
+          path: ${{ github.workspace }}/build/SantanderTrollStore.tipa
 
       - name: Upload Permasigned deb
         uses: actions/upload-artifact@v4
         with:
           name: SantanderJailbroken
-          path: ${{ github.workspace }}/build/TestingSantander.deb
+          path: ${{ github.workspace }}/build/Santander.deb
